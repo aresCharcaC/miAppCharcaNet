@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiAppCharca.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd5bba47169cc2f1bc07cd1f7b02b1dc6f0afd5b")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiAppCharca.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiAppCharca.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
