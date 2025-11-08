@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MiAppCharca.Persistense.props" />
+</Project>
