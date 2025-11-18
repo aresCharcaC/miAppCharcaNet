@@ -260,3 +260,4 @@ C:\Users\USER\RiderProjects\MiAppCharca\MiAppCharca.Persistense\obj\Debug\net9.0
 C:\Users\USER\RiderProjects\MiAppCharca\MiAppCharca.Persistense\bin\Debug\net9.0\MediatR.dll
 C:\Users\USER\RiderProjects\MiAppCharca\MiAppCharca.Persistense\bin\Debug\net9.0\MediatR.Contracts.dll
 C:\Users\USER\RiderProjects\MiAppCharca\MiAppCharca.Persistense\bin\Debug\net9.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\USER\RiderProjects\MiAppCharca\MiAppCharca.Persistense\obj\Debug\net9.0\MiAppCharca.Persistense.sourcelink.json

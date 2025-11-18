@@ -95,3 +95,4 @@ C:\Users\USER\RiderProjects\MiAppCharca\MiAppCharca.Domain\obj\Debug\net9.0\refi
 C:\Users\USER\RiderProjects\MiAppCharca\MiAppCharca.Domain\obj\Debug\net9.0\MiAppCharca.Domain.pdb
 C:\Users\USER\RiderProjects\MiAppCharca\MiAppCharca.Domain\obj\Debug\net9.0\MiAppCharca.Domain.genruntimeconfig.cache
 C:\Users\USER\RiderProjects\MiAppCharca\MiAppCharca.Domain\obj\Debug\net9.0\ref\MiAppCharca.Domain.dll
+C:\Users\USER\RiderProjects\MiAppCharca\MiAppCharca.Domain\obj\Debug\net9.0\MiAppCharca.Domain.sourcelink.json

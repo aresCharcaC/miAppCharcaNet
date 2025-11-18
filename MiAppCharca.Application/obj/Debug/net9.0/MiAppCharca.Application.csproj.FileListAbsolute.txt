@@ -118,3 +118,4 @@ C:\Users\USER\RiderProjects\MiAppCharca\MiAppCharca.Application\bin\Debug\net9.0
 C:\Users\USER\RiderProjects\MiAppCharca\MiAppCharca.Application\bin\Debug\net9.0\MediatR.dll
 C:\Users\USER\RiderProjects\MiAppCharca\MiAppCharca.Application\bin\Debug\net9.0\MediatR.Contracts.dll
 C:\Users\USER\RiderProjects\MiAppCharca\MiAppCharca.Application\bin\Debug\net9.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\USER\RiderProjects\MiAppCharca\MiAppCharca.Application\obj\Debug\net9.0\MiAppCharca.Application.sourcelink.json
