@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WUojmqvGedY=",
+  "dgSpecHash": "RnxUsGCv0og=",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\RiderProjects\\MiAppCharca\\MiAppCharca.Persistense\\MiAppCharca.Persistense.csproj",
   "expectedPackageFiles": [
@@ -99,8 +99,10 @@
     {
       "code": "NU1608",
       "level": "Warning",
-      "warningLevel": 1,
       "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 13.1.0 was resolved.",
+      "projectPath": "C:\\Users\\USER\\RiderProjects\\MiAppCharca\\MiAppCharca.Persistense\\MiAppCharca.Persistense.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\USER\\RiderProjects\\MiAppCharca\\MiAppCharca.Persistense\\MiAppCharca.Persistense.csproj",
       "libraryId": "MediatR",
       "targetGraphs": [
         "net9.0"

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiAppCharca.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d41d6f324407315339032482e6a6012ecbdca834")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef511ddcc30fdfcd942134be2c902f7c30cdf3c6")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiAppCharca.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiAppCharca.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

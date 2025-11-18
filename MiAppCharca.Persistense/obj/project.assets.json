@@ -1799,10 +1799,7 @@
         },
         "runtime": {
           "bin/placeholder/MiAppCharca.Application.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "MiAppCharca.Domain/1.0.0": {
         "type": "project",
@@ -1812,10 +1809,7 @@
         },
         "runtime": {
           "bin/placeholder/MiAppCharca.Domain.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "MiAppCharca.Infrastructure/1.0.0": {
         "type": "project",
@@ -1835,10 +1829,7 @@
         },
         "runtime": {
           "bin/placeholder/MiAppCharca.Infrastructure.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },
