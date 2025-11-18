@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiAppCharca.Persistense")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef511ddcc30fdfcd942134be2c902f7c30cdf3c6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a4c72e23c811f24f2beef40c9d875e40dee1141")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiAppCharca.Persistense")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiAppCharca.Persistense")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
