@@ -1,7 +1,14 @@
+.git
+.gitignore
+.gitattributes
+
+.idea/
+.vscode/
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
+*.DotSettings.user
 
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -13,26 +20,41 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
-
-publish/
-*.pubxml
-*.pubxml.user
+[Ll]ogs/
 
 *.nupkg
 *.snupkg
 packages/
 
-*.DotSettings.user
-
-
-.env
-
+publish/
+*.pubxml
+*.pubxml.user
 
 *.pfx
 *.p12
+*.pem
+.env
+.env.local
+
+.DS_Store
+Thumbs.db
 
 *.log
 Logs/
 
-.DS_Store
-Thumbs.db
+[Tt]est[Rr]esults/
+coverage/
+*.trx
+
+docs/
+README.md
+LICENSE
+.github/
+
+node_modules/
+package-lock.json
+yarn.lock
+
+*.tmp
+*.temp
+*.bak
