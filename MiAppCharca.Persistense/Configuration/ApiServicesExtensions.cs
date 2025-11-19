@@ -112,17 +112,19 @@ namespace MiAppCharca.Configuration
 
         public static WebApplication ConfigureApiMiddleware(this WebApplication app)
         {
+            // Swagger siempre disponible
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ticketera API V1");
+                c.RoutePrefix = string.Empty;
+            });
+
+            // Solo HTTPS en desarrollo local
             if (app.Environment.IsDevelopment())
             {
-                app.UseSwagger();
-                app.UseSwaggerUI(c =>
-                {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ticketera API V1");
-                    c.RoutePrefix = string.Empty;
-                });
+                app.UseHttpsRedirection();
             }
-
-            app.UseHttpsRedirection();
             app.UseCors("AllowAll");
             app.UseAuthentication();
             app.UseAuthorization();
