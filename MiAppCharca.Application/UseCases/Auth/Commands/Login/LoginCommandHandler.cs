@@ -64,11 +64,16 @@ namespace MiAppCharca.Application.UseCases.Auth.Commands.Login
 
         private string GenerateJwtToken(Guid userId, string username, List<string> roles)
         {
-            var jwtSettings = _configuration.GetSection("JwtSettings");
-            var secretKey = jwtSettings["SecretKey"];
-            var issuer = jwtSettings["Issuer"];
-            var audience = jwtSettings["Audience"];
-            var expirationMinutes = int.Parse(jwtSettings["ExpirationInMinutes"] ?? "60");
+            var secretKey = Environment.GetEnvironmentVariable("JwtSettings__SecretKey") 
+                            ?? _configuration["JwtSettings:SecretKey"];
+            var issuer = Environment.GetEnvironmentVariable("JwtSettings__Issuer") 
+                         ?? _configuration["JwtSettings:Issuer"];
+            var audience = Environment.GetEnvironmentVariable("JwtSettings__Audience") 
+                           ?? _configuration["JwtSettings:Audience"];
+            var expirationMinutes = int.Parse(
+                Environment.GetEnvironmentVariable("JwtSettings__ExpirationInMinutes") 
+                ?? _configuration["JwtSettings:ExpirationInMinutes"] 
+                ?? "60");
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

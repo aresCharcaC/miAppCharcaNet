@@ -23,28 +23,37 @@ namespace MiAppCharca.Configuration
             // MediatR registra automáticamente todos los Handlers
 
             // ===== JWT AUTHENTICATION =====
-            var jwtSettings = configuration.GetSection("JwtSettings");
-            var secretKey = jwtSettings["SecretKey"];
+            var secretKey = Environment.GetEnvironmentVariable("JwtSettings__SecretKey") 
+                            ?? configuration["JwtSettings:SecretKey"];
+            var issuer = Environment.GetEnvironmentVariable("JwtSettings__Issuer") 
+                         ?? configuration["JwtSettings:Issuer"];
+            var audience = Environment.GetEnvironmentVariable("JwtSettings__Audience") 
+                           ?? configuration["JwtSettings:Audience"];
+
+            if (string.IsNullOrEmpty(secretKey))
+            {
+                throw new InvalidOperationException("JWT SecretKey is not configured");
+            }
 
             services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = jwtSettings["Issuer"],
-                    ValidAudience = jwtSettings["Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey(
-                        Encoding.UTF8.GetBytes(secretKey))
-                };
-            });
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = issuer,
+                        ValidAudience = audience,
+                        IssuerSigningKey = new SymmetricSecurityKey(
+                            Encoding.UTF8.GetBytes(secretKey))
+                    };
+                });
 
             // ===== SWAGGER CONFIGURATION =====
             services.AddSwaggerGen(c =>
