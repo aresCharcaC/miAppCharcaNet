@@ -16,12 +16,11 @@ namespace MiAppCharca.Infrastructure.Configuration
         {
             // ===== DATABASE CONNECTION =====
             var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
-            string connectionString;
 
             if (!string.IsNullOrEmpty(databaseUrl))
             {
                 // Producción (Render) - PostgreSQL
-                connectionString = ConvertPostgresUrl(databaseUrl);
+                var connectionString = ConvertPostgresUrl(databaseUrl);
                 services.AddDbContext<TicketeraDbContext>(options =>
                 {
                     options.UseNpgsql(connectionString);
@@ -30,7 +29,7 @@ namespace MiAppCharca.Infrastructure.Configuration
             else
             {
                 // Desarrollo local - SQL Server
-                connectionString = configuration.GetConnectionString("DefaultConnection");
+                var connectionString = configuration.GetConnectionString("DefaultConnection");
                 services.AddDbContext<TicketeraDbContext>(options =>
                 {
                     options.UseSqlServer(connectionString);
@@ -49,8 +48,28 @@ namespace MiAppCharca.Infrastructure.Configuration
 
         private static string ConvertPostgresUrl(string databaseUrl)
         {
-            var uri = new Uri(databaseUrl);
-            return $"Host={uri.Host};Port={uri.Port};Database={uri.AbsolutePath.Trim('/')};Username={uri.UserInfo.Split(':')[0]};Password={uri.UserInfo.Split(':')[1]};SSL Mode=Require;Trust Server Certificate=true";
+            // Render puede dar formato: 
+            // postgres://user:password@host:port/dbname
+            // o postgres://user:password@host/dbname (sin puerto)
+            
+            try
+            {
+                var uri = new Uri(databaseUrl);
+                var host = uri.Host;
+                var database = uri.AbsolutePath.TrimStart('/');
+                var userInfo = uri.UserInfo.Split(':');
+                var username = userInfo[0];
+                var password = userInfo.Length > 1 ? userInfo[1] : "";
+                
+                // Puerto: si no está especificado, usar 5432 (default de PostgreSQL)
+                var port = uri.Port > 0 ? uri.Port : 5432;
+
+                return $"Host={host};Port={port};Database={database};Username={username};Password={password};SSL Mode=Require;Trust Server Certificate=true";
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException($"Error al convertir DATABASE_URL: {ex.Message}", ex);
+            }
         }
     }
 }
